@@ -270,6 +270,7 @@ if __name__ == '__main__':
 
     db_connector = DatabaseConnector("data_ingestion\db_local_creds.yaml")
     db_connector.init_db_engine(autocommit=True)
+    engine = db_connector.engine
     try:
         update_tables(db_connector.engine)
     except ProgrammingError:
