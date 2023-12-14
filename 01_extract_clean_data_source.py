@@ -51,12 +51,13 @@ if __name__ == '__main__':
 
     # Clean and load products
     s3_address = 's3://data-handling-public/products.csv'
-    df = DataExtractor.extract_from_s3(s3_address)
+    df = DataExtractor().extract_from_s3(s3_address)
+    print(df)
     df = DataCleaning().clean_products_data(df)
     print(df.head())
     db_connector_local.upload_to_db(df, 'dim_products')
 
-    # Clean and load orders
+    #Clean and load orders
     tables = db_connector_aws.list_db_tables()
     orders_table = list(filter(lambda x: 'order' in x.lower(), tables))[0]
     df = DataExtractor.read_rds_table(db_connector_aws, orders_table)

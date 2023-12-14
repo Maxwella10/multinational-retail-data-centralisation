@@ -45,6 +45,8 @@ class DataExtractor:
             path_split = re.split(r'/+', path)
             bucket = path_split[1]
             key = path_split[-1]
+            print(bucket)
+            print(key)
             obj = s3_client.get_object(Bucket=bucket, Key=key)
             df = pd.read_csv(io.BytesIO(obj['Body'].read()))
             return df
@@ -52,7 +54,6 @@ class DataExtractor:
             print(f'Failed to retrieve store details')
             print(f'{err.__class__.__name__}: {err}')
             return pd.DataFrame()
-
     @staticmethod
     @time_it
     @print_newline
@@ -151,7 +152,7 @@ class DataExtractor:
         except Exception as err:
             print(f'Failed to read data')
             print(f'{err.__class__.__name__}: {err}')
-            return pd.DataFrame()
+            raise err
 
     @staticmethod
     @time_it
