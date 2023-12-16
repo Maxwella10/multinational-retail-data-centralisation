@@ -99,6 +99,7 @@ Once the data is cleaned, all these dataframes are stored in the sales_data data
 User details table: dim_users
 User card details table:dim_card_details
 Store details table: dim_store_details
+Date details table : dim_date_times
 Product details table: dim_products
 Order details table: orders_table
 Each table will serve the orders_table which will be the single source of truth for the orders.
