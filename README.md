@@ -92,6 +92,15 @@ Removing rows filled with any erroneous values and NULL values
 Removing columns that does not have any meaningful data
 
 
+## Create the database schema
+
+Develop the star-based schema of the PostgreSQL database, ensuring that columns have the correct data types. Use SQL (executed via SQLAlchemy) to:
+
+    Update data types for selected columns
+    Derive columns using CASE/WHEN: e.g. create weight class column based on weight
+    Set primary keys and foreign keys
+
+
 ## Data Loading
 
 Once the data is cleaned, all these dataframes are stored in the sales_data database as tables in pgAdmin 4. We use SQL to query these tables
