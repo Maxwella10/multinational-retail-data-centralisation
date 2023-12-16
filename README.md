@@ -15,9 +15,13 @@ db_creds.yaml
 These files contain credentials for connecting to the local PostgreSQL database, and the AWS RDS database containing orders data, respectively. The YAML files should contain the following keys:
 
 HOST
+
 PASSWORD
+
 USER
+
 DATABASE
+
 PORT
 
 
