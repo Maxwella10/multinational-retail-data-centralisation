@@ -97,11 +97,19 @@ Removing columns that does not have any meaningful data
 Once the data is cleaned, all these dataframes are stored in the sales_data database as tables in pgAdmin 4. We use SQL to query these tables
 
 User details table: dim_users
+
 User card details table:dim_card_details
+
 Store details table: dim_store_details
+
 Date details table : dim_date_times
+
 Product details table: dim_products
+
 Order details table: orders_table
+
+
 Each table will serve the orders_table which will be the single source of truth for the orders.
+
 
 With the primary keys created in the tables prefixed with dim we will create the foreign keys in the orders_table to reference the primary keys in the other tables.
