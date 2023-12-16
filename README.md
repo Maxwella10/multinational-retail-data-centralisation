@@ -8,11 +8,15 @@ In this project we are using pgAdmin4 to store the data in the database postgres
 
 
 ## IMPORTANT
+
 The following YAML files are expected to exist in your root directory:
 
 db_local_creds.yaml
+
 db_creds.yaml
+
 These files contain credentials for connecting to the local PostgreSQL database, and the AWS RDS database containing orders data, respectively. The YAML files should contain the following keys:
+
 
 HOST
 
