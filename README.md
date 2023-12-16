@@ -44,17 +44,18 @@ database_utils.py In this script we create a DatabaseConnector class which we wi
 
 ## Data Extraction
 
-1.) User details from Amazon RDS
+### 1.) User details from Amazon RDS
+
 The historical data of users is currently stored in an AWS database in the cloud.
 DatabaseConnector class in database_utils.py script is used to connect to the Amazon RDS database and in the DataExtractor class in data_extraction.py, creating a method to extract the user details table and save it as a pandas Dataframe.
 
-2.) User card details from AWS S3
+### 2.) User card details from AWS S3
 
 The user's card details are stored in a PDF document in an AWS S3 bucket.
 Installing the Python package tabula-py will help to extract data from a pdf document.
 Creating a method in the DataExtractor class, which takes in a link as an argument and returns a pandas DataFrame.
 
-3.) Store data through the use of an API
+### 3.) Store data through the use of an API
 
 The API has two GET methods. One will return the number of stores in the business and the other to retrieve a store given a store number.
 To connect to the API we need to include the API key to connect to the API in the method header.
@@ -65,13 +66,13 @@ Returning the number of stores
 Creating a method in the DataExtractor that returns the number of stores to extract. It should take in the number of stores endpoint and header dictionary as an argument. This tells us how many stores need to be extracted from the API.
 Creating another method which will take the retrieve a store endpoint as an argument and extracts all the stores from the API saving them in a pandas DataFrame.
 
-4.) Product details from AWS S3
+### 4.) Product details from AWS S3
 
 The information for each product the company currently sells is stored in CSV format in an S3 bucket on AWS
 Creating method in DataExtractor which uses the boto3 package to download and extract the information returning a pandas DataFrame.
 The S3 address for the products data is the following s3://data-handling-public/products.csv the method will take this address in as an argument and return the pandas DataFrame.
 
-5.) Order details from Amazon RDS
+### 5.) Order details from Amazon RDS
 
 This table which acts as the single source of truth for all orders the company has made in the past is stored in a database on AWS RDS.
 Creating a method to extract the orders data table and save it as a pandas Dataframe.
