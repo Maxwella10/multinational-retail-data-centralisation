@@ -118,6 +118,18 @@ Product details table: dim_products
 Order details table: orders_table
 
 
+## Query the data
+
+Use SQL to query the PostgreSQL database and create a report of business metrics, answering questions such as:
+
+Which locations have the most stores?
+
+Which months produce the highest sales?
+
+What percentage of sales come from each store type?
+
+How quickly is the company making sales? (average time interval between consecutive sales, grouped by year)
+
 Each table will serve the orders_table which will be the single source of truth for the orders.
 
 
