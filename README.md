@@ -6,6 +6,25 @@ This is a project from AiCore based on the scenario that I am working for a mult
 
 In this project we are using pgAdmin4 to store the data in the database postgres and postgreSQL for querying. This database will store all the company information once you extract it for the various data sources.
 
+
+## IMPORTANT
+The following YAML files are expected to exist in your root directory:
+
+db_local_creds.yaml
+db_creds.yaml
+These files contain credentials for connecting to the local PostgreSQL database, and the AWS RDS database containing orders data, respectively. The YAML files should contain the following keys:
+
+HOST
+PASSWORD
+USER
+DATABASE
+PORT
+
+
+
+
+
+
 ## ETL Process
 The data is fetched from various sources. This data is cleaned and then stored into the database for analysis The are 3 python scripts used for this purpose namely
 
